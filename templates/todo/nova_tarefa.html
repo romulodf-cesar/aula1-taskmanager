@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Tarefas</title>
+</head>
+
+<body>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm border-0 bg-white">
+                <h3 class="fw-bold text-dark mb-3">Nova Tarefa</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="mb-3 text-dark">
+                        <label class="form-label fw-bold small">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success rounded-pill px-4">Salvar Registro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
